@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FlowerShop</title>
+</head>
+
+<body>
+    <!-- Heading Name -->
+    <div class="heading">
+        <h1 style="color:#F08080;">Flower Shop 🌷</h1>
+         <p></p>
+        <p style="color:#8FBC8F;">😏 Click each image to enlarge</p> 
+    </div>
+
+    <!-- Image Gallery section all images in one div -->
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src=
+"https://hips.hearstapps.com/hmg-prod/images/vibrant-pink-and-white-summer-flowering-cosmos-royalty-free-image-1653499726.jpg?crop=0.66541xw:1xh;center,top&resize=980:*"
+                onclick="openModal(
+'https://hips.hearstapps.com/hmg-prod/images/vibrant-pink-and-white-summer-flowering-cosmos-royalty-free-image-1653499726.jpg?crop=0.66541xw:1xh;center,top&resize=980:*')"
+                alt="Image 1">
+        </div>
+        <div class="gallery-item">
+            <img src=
+"https://hips.hearstapps.com/hmg-prod/images/tulips-1508785044.jpg?crop=1.00xw:0.669xh;0,0.310xh&resize=980:*"
+                onclick="openModal(
+'https://hips.hearstapps.com/hmg-prod/images/tulips-1508785044.jpg?crop=1.00xw:0.669xh;0,0.310xh&resize=980:*')"
+                alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src=
+"https://hips.hearstapps.com/hmg-prod/images/wisteria-in-bloom-royalty-free-image-1653423554.jpg?crop=0.685xw:1.00xh;0.112xw,0&resize=980:*"
+                onclick="openModal(
+'https://hips.hearstapps.com/hmg-prod/images/wisteria-in-bloom-royalty-free-image-1653423554.jpg?crop=0.685xw:1.00xh;0.112xw,0&resize=980:*')"
+                alt="Image 3">
+        </div>
+        <div class="gallery-item">
+            <img src=
+"https://hips.hearstapps.com/hmg-prod/images/door-shaded-by-bougainvillea-porquerolles-france-royalty-free-image-1653423252.jpg?crop=0.668xw:1.00xh;0.165xw,0&resize=980:*"
+                onclick="openModal(
+'https://hips.hearstapps.com/hmg-prod/images/door-shaded-by-bougainvillea-porquerolles-france-royalty-free-image-1653423252.jpg?crop=0.668xw:1.00xh;0.165xw,0&resize=980:*')"
+                alt="Image 4">
+        </div>
+        <div class="gallery-item">
+            <img src=
+"https://hips.hearstapps.com/hmg-prod/images/poppy-1508785046.jpg?crop=1xw:0.6666666666666666xh;center,top&resize=980:*"
+                onclick="openModal(
+'https://hips.hearstapps.com/hmg-prod/images/poppy-1508785046.jpg?crop=1xw:0.6666666666666666xh;center,top&resize=980:*')"
+                alt="Image 5">
+        </div>
+        <div class="gallery-item">
+            <img src=
+"https://hips.hearstapps.com/hmg-prod/images/azalea-1508785048.jpg?crop=1.00xw:0.669xh;0,0.174xh&resize=980:*"
+                onclick="openModal(
+'https://hips.hearstapps.com/hmg-prod/images/azalea-1508785048.jpg?crop=1.00xw:0.669xh;0,0.174xh&resize=980:*')"
+                alt="Image 6">
+        </div>
+        <div class="gallery-item">
+            <img src=
+"https://hips.hearstapps.com/hmg-prod/images/close-up-of-pink-roses-blooming-outdoors-royalty-free-image-1578194641.jpg?crop=1.00xw:0.751xh;0,0.0765xh&resize=980:*"
+                onclick="openModal(
+'https://hips.hearstapps.com/hmg-prod/images/close-up-of-pink-roses-blooming-outdoors-royalty-free-image-1578194641.jpg?crop=1.00xw:0.751xh;0,0.0765xh&resize=980:*')"
+                alt="Image 7">
+        </div>
+        <div class="gallery-item">
+            <img src=
+"https://hips.hearstapps.com/hmg-prod/images/blanket-flower-1508785048.jpg?crop=1.00xw:0.669xh;0,0.191xh&resize=980:*"
+                onclick="openModal(
+'https://hips.hearstapps.com/hmg-prod/images/blanket-flower-1508785048.jpg?crop=1.00xw:0.669xh;0,0.191xh&resize=980:*')"
+                alt="Image 8">
+        </div>
+       <div class="gallery-item">
+            <img src=
+"https://hips.hearstapps.com/hmg-prod/images/apple-tree-flowers-1508785049.jpg?crop=1.00xw:0.667xh;0,0.238xh&resize=980:*"
+                onclick="openModal(
+'https://hips.hearstapps.com/hmg-prod/images/apple-tree-flowers-1508785049.jpg?crop=1.00xw:0.667xh;0,0.238xh&resize=980:*')"
+                alt="Image 9">
+        </div>
+    </div>
+
+    <!-- Modal for Image Display -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- JavaScript for Modal -->
+    <script>
+        function openModal(src) {
+            document.getElementById("modalImage").src = src;
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
+
+<style>
+.gallery {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+     gap: 10px;
+     padding: 20px;
+ }
+
+ .gallery-item {
+     overflow: hidden;
+ }
+
+ .gallery-item img {
+     width: 100%;
+     height: auto;
+     display: block;
+ }
+
+ .modal {
+     display: none;
+     position: fixed;
+     z-index: 1;
+     padding-top: 100px;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     overflow: auto;
+     background-color: #FFF8DC;
+ }
+
+ .modal-content {
+     margin: auto;
+     display: block;
+     max-width: 90%;
+     max-height: 90%;
+ }
+
+ .close {
+     position: absolute;
+     top: 15px;
+     right: 35px;
+     color: #9932CC;
+     font-size: 40px;
+     font-weight: bold;
+     transition: 0.3s;
+ }
+
+ .close:hover,
+ .close:focus {
+     color: #bbb;
+     text-decoration: none;
+     cursor: pointer;
+ }
+</style>
+
+<script>
+function openModal(imageSrc) {
+    let modal = document.getElementById("myModal");
+    let modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = imageSrc;
+}
+
+function closeModal() {
+    let modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+</script>
